@@ -1,0 +1,105 @@
+.story {
+  border-top: 4px solid silver;
+  border-bottom: 4px solid silver;
+  width: 90%;
+  margin: 0 auto;
+  box-shadow: 0 3rem 6rem rgba($color-black, 0.1);
+  background-color: rgba($color-white, 1);
+  padding: 3rem;
+  padding-left: 5rem;
+  font-size: 2rem;
+
+  @include respond(tab-port) {
+    width: 90%;
+    padding: 3rem;
+    padding-left: 7rem;
+  }
+
+  @include respond(phone) {
+    width: 90%;
+    padding: 2rem;
+    padding-left: 5rem;
+  }
+
+  &__shape {
+    box-shadow: 0 1.5rem 4rem rgba($color-black, 0.2);
+    width: 20rem;
+    height: 20rem;
+    float: left;
+    position: relative;
+    overflow: hidden;
+    margin-right: 2rem;
+    //border-radius: 5%;
+
+    // @supports (clip-path: polygon(0 0)) or (-webkit-clip-path: polygon(0 0)) {
+    //   -webkit-clip-path: circle(50% at 50% 50%);
+    //   clip-path: circle(50% at 50% 50%);
+    //   -webkit-shape-outside: circle(50% at 50% 50%);
+    //   shape-outside: circle(50% at 50% 50%);
+    //   border-radius: none;
+    // }
+
+    @include respond(phone) {
+    }
+  }
+
+  &__img {
+    height: 100%;
+    margin-left: 12px;
+    transform: translateX(-4rem) scale(1.4);
+    backface-visibility: hidden;
+    transition: all 0.5s;
+  }
+
+  &__text {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS',
+      sans-serif;
+    text-shadow: 0 2rem 4.5rem rgba(0, 0, 0, 0.3);
+    @include respond(phone) {
+      font-size: 2rem;
+    }
+
+    @include respond(tab-port) {
+      font-size: 2.6rem;
+    }
+
+    @include respond(tab-land) {
+      font-size: 2.6rem;
+    }
+  }
+
+  &__title {
+    color: $color-white;
+    text-shadow: 0 2rem 4.5rem rgba(0, 0, 0, 0.3);
+  }
+
+  &__subtitle {
+    color: $color-black;
+    text-shadow: 0 2rem 4.5rem rgba(0, 0, 0, 0.3);
+    font-family: 'artdeco';
+  }
+
+  &__caption {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, 20%);
+    color: $color-white;
+    text-transform: uppercase;
+    font-size: 2rem;
+    text-align: center;
+    opacity: 0;
+    transition: all 0.5s;
+    backface-visibility: hidden;
+  }
+
+  // &:hover &__caption {
+  //   opacity: 1;
+  //   transform: translate(-50%, -50%);
+  // }
+
+  // &:hover &__img {
+  //   transform: translateX(-4rem) scale(1);
+  //   filter: blur(3px) brightness(80%);
+  // }
+}
